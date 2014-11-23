@@ -195,6 +195,27 @@
 
 \section*{What didn't go well}
 % Ellen's section
+Our initial plan for this semester called for a fully re-engineered Intrepid
+package using Kokkos by early December, which we would present in a seminar
+during our site visit to Sandia at the end of the semester.  However, we have
+run into a few setbacks, and are therefore unlikely to meet that goal.
+
+Originally, we had hoped to find a working algorithm using Kokkos that yielded
+speedup comparable to hand-coded Cuda and OpenMP for Intrepid tensor
+contractions.  However, our prototype Kokkos implementations have lagged in
+speed performance, even when taking into account coalescence and memory layout.
+We have since abandoned Kokkos multidimensional Views for the moment, instead
+using single-dimension Kokkos views in order to have finer control over the
+memory layout.  While this approach is yielding promising results with Kokkos
+OpenMP, both the Kokkos Cuda and manual Cuda implementations have been
+disappointingly slow.
+
+We are continuing to work on getting speedup from Kokkos and manual Cuda, but
+we feel it would be counterproductive to work on more Intrepid kernels until we
+have our single prototype kernel producing performance gains on the expected
+order of magnitude.  Therefore, given the amount of time left in the semester,
+it is likely that we will have to settle for presenting our prototype kernel
+instead of a fully reworked Intrepid package in December. 
 
 \section*{Plans for next semester}
 % Brett's section
