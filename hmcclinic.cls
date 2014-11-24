@@ -1,5 +1,5 @@
 % \iffalse meta-comment
-% 
+%
 % hmcclinic.cls -- Harvey Mudd College Clinic Report LaTeX Class File
 %
 % $Id: hmcclinic.cls 407 2013-10-30 18:33:27Z cmc $
@@ -7,7 +7,7 @@
 % Copyright (C) 2007--2010
 %
 % Claire Connelly <cmc@math.hmc.edu>
-%              and 
+%              and
 % Melissa O'Neill <oneill@cs.hmc.edu>
 %
 % Written for Harvey Mudd College's
@@ -17,11 +17,11 @@
 %
 % *** HMC STUDENTS SHOULD NOT CHANGE THE TYPESETTING PARAMETERS FOR ***
 % *** THEIR CLINIC REPORTS WITHOUT FIRST CHECKING WITH THEIR CLINIC ***
-% *** DIRECTOR.  STUDENTS WISHING TO ADD FEATURES SHOULD DO SO WITH *** 
-% *** OTHER FILES, NOT BY MODIFYING THIS FILE.                      *** 
+% *** DIRECTOR.  STUDENTS WISHING TO ADD FEATURES SHOULD DO SO WITH ***
+% *** OTHER FILES, NOT BY MODIFYING THIS FILE.                      ***
 %
 % License:
-% 
+%
 %   This program is free software; you can redistribute it and/or
 %   modify it under the terms of the GNU General Public License as
 %   published by the Free Software Foundation; either version 2 of the
@@ -30,12 +30,12 @@
 %   This program is distributed in the hope that it will be useful,
 %   but WITHOUT ANY WARRANTY; without even the implied warranty of
 %   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-%   GNU General Public License for more details. 
+%   GNU General Public License for more details.
 %
 %   You should have received a copy of the GNU General Public License
 %   along with this program; if not, write to the Free Software
 %   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
-%   02111-1307  USA 
+%   02111-1307  USA
 %
 % \fi
 %%
@@ -123,7 +123,7 @@
 \AtBeginDocument{\urlstyle{sf}}
 
 %%% Set some defaults for bibliographic punctuation used by natbib.sty.
-\bibpunct[:~]{(}{)}{;}{a}{,}{,~} 
+\bibpunct[:~]{(}{)}{;}{a}{,}{,~}
 
 
 %%% Define some environments.
@@ -144,7 +144,7 @@
 
 \ifshortdoc
 %%% Set the headers and footers.
- 
+
 \pagestyle{fancy}{%
   \fancyhf{} %% Clear all headers and footers.
   \fancyhead[LE]{\textbf{\thepage{}}}
@@ -274,7 +274,7 @@
            \@consultant
            \end{tabular}\par}}%
       \fi
-     
+
     \@thanks
     \vfil\eject
     \cleardoublepage
@@ -307,7 +307,7 @@
 \def\reporttype#1{\gdef\@reporttype{#1}}
 %\def\@reporttype{\@latex@warning@no@line{No \noexpand\reporttype given}}
 %%% Default to Final Report
-\def\@reporttype{Final Report}
+\def\@reporttype{Midyear Report}
 
 
 %%% Make \eqref behave the way we want.
@@ -430,6 +430,3 @@
 %% Ragged bottom is better than the alternative...
 
 \raggedbottom
-
-
-
