@@ -217,8 +217,46 @@ order of magnitude.  Therefore, given the amount of time left in the semester,
 it is likely that we will have to settle for presenting our prototype kernel
 instead of a fully reworked Intrepid package in December. 
 
-\section*{Plans for next semester}
+\section*{Future Plans}
 % Brett's section
+A priority for us is to finish creating Kokkos versions of the Intrepid ArrayTools functions. 
+We were originally hoping to finish this task by Winter Break (December 16th), but we have 
+come across unexpected obstacles as previously mentioned. The way that we plan on finishing 
+this job is by focusing our efforts on a couple of the simpler methods in the ArrayTools library 
+in order to get the wanted speed-up. Once we have correct Kokkos implementations for a couple of
+the functions we predict that we can apply similar parallel/memory access algorithms to speed-up
+the remaining functions in Intrepid. Another reasoning for focusing our effort on a few functions
+is because another task of our clinic is to show a proof of concept for Kokkos, which actually
+has received a higher priority than finishing the Intrepid kernel. If we have a couple functions 
+with great speedup using Kokkos, then we will have progress for completing Intrepid, but will also 
+have a proof of concept for Kokkos as well. That is why the proof of concept has a higher priority 
+than finish parallelizing the Intrepid kernel. Throughout this entire process it is important for 
+us to continue to record our thoughts about Kokkos. However, since kokkos is still being developed
+we need to remember to put these notes on our team wiki so that our liaisons have access to them. 
+This will give Sandia valuable feedback about Kokkos and valuable information on how to improve the
+user's experience. Logging these notes on the wiki should be a simple side task but has a priority
+as high as showing a proof of concept for Kokkos. As mentioned, the initial goal was to finish 
+creating Kokkos versions of the Intrepid kernel by Winter Break. However, if we do not meet that 
+deadline we need to try to finish it as fast as possible so that we can start our next task. 
+Depending on the upcoming work and whether we have a breakthrough in speedup, we may meet our 
+Winter Break deadline or finish by mid February. We do not yet know what our task after completing
+Intrepid will be, but it will most likely be creating a Kokkos version of a different high 
+performance computing kernel. Depending on how similar the new kernel is to Intrepid in terms of
+own function similarity, for example Intrepid's functions are all essentially the same but with 
+different order tensors, we will tackle the problem using the same process. The process is to find
+simpler functions in the kernel, create Kokkos versions, manipulate memory accesses and 
+parallelization points until we achieve reasonable speedup, then apply the algorithm to the rest 
+of the functions. However, if each function in the new kernel is unlike the others, we will have 
+to simply divide and conquer among the team. Our goal is to finish the Intrepid kernel as well as
+at least one more kernel. Our stretch goals are to continue to create Kokkos versions of more high
+performance computing kernels or integrating the Kokkos versions of the kernels back into the 
+original packages. We are leaning towards continuing to create Kokkos versions of more kernels 
+because we will have a better understanding of Kokkos and what is required to gain speed-up. 
+Integrating the Kokkos versions of the kernels into their original packages brings up new 
+challenges that we have not yet faced and will have a much greater learning curve. Overall, our 
+priorities, in order, are: finish a couple functions within Intrepid ArrayTools with expected 
+speed-up to show a Kokkos proof of concept, log our experiences with Kokkos on the team wiki, 
+finish creating a Kokkos version of Intrepid, then repeat with a new high performance computing kernel.
 
 \end{document}
 
