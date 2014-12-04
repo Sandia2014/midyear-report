@@ -51,7 +51,7 @@
   \AtEndOfClass{\def\@reporttype{Statement of Work}}%
 }
 \DeclareOption{midyear}{%
-  \AtEndOfClass{\def\@reporttype{Midyear Report}}%
+  \AtEndOfClass{\def\@reporttype{Midyear Update}}%
 }
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}%
     {\ifshortdoc report\else book\fi}}
