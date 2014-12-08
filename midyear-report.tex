@@ -209,27 +209,26 @@ allows us to avoid expensive data copies from the GPU to the CPU.
 
 \section*{Obstacles}
 % Ellen's section
-Our initial plan for this semester called for a fully re-engineered Intrepid
-package using Kokkos by early December, which we would present in a seminar
-during our site visit to Sandia at the end of the semester.  However, we have
-run into a few setbacks, and are therefore unlikely to meet that goal.
+Initially, we planned on completing the  fully re-engineered Intrepid
+package using Kokkos by early December. While we were not able to 
+finish parallelizing the entire kernel with sufficient speedup, we plan on 
+delivering a subset of the kernels by winter break, and giving a seminar
+on how to best achieve speedup using kokkos at our site visit.
 
-Originally, we had hoped to find a working algorithm using Kokkos that yielded
-speed-up comparable to hand-coded Cuda implementations of matrix multiplication.  
-However, our prototype Kokkos implementations have not been able to reach that level of
-speed performance.
-We have since abandoned Kokkos multidimensional Views for the moment, instead
-using single-dimension Kokkos views in order to have finer control over the
-memory layout.  While this approach is yielding promising results with Kokkos
-OpenMP, both the Kokkos Cuda and manual Cuda implementations have been
-disappointingly slow. In some cases this is due to a low ratio of FLOPS to memory
-reads, while in others we need to work on further coalescing our memory accesses. 
+Our main obstacle this semester has been the difficulty of reasoning about 
+memory access patterns on the GPU. Most of our time has been spent determining
+general memory access patterns that can be applied to many of the kernels
+in the package.
 
-We are continuing to work on getting speed-up from Kokkos and manual Cuda, but
-we feel it would be counterproductive to work on more Intrepid kernels until we
-have our single prototype kernel producing performance gains on the expected
+Another obstacle we've encountered is the low ratio of work to memory accesses 
+inherent in the nature of a few kernels. The kernel that performs dot products, for example,
+has to perform one memory access per multiply. Because memory accesses are so 
+expensive on the GPU, it is incredibly difficult to get significant speedup on problems like 
+these.
+
+At this point, we have a prototype kernel producing performance gains on the expected
 order of magnitude.  Therefore, given the amount of time left in the semester,
-it is likely that we will have to settle for presenting our prototype kernel
+it is likely that we will have to settle for presenting a subset of the kernels
 instead of a fully reworked Intrepid package in December. 
 
 \section*{Future Plans}
