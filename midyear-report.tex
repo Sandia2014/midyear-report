@@ -197,17 +197,18 @@ Intrepid we were able to familiarize ourselves with GPU programming enough to
 make meaningful contributions to the code.
 
 Since then, we have been able to export multiple kernels from Intrepid and get
-them working with Kokkos. We were not able to get as much speed-up as we
-originally expected. We were expecting on the order of 100 times speed-up, but
-we have since learned that the baseline we are using is more cache-friendly than
-expected, which is why our Kokkos code is only about 25 times faster. During
-this time we have learned a lot about using
+them working with Kokkos. We were hoping to achieve speedup on the order of 100x, but
+since the original intrepid kernels were implemented in a cache-friendly way, we
+have changed our expectations to 20-40x speedup for kernels suited to GPU programming. 
+On one of the kernels, contractFieldFieldScalar, we have been able to accomplish a speedup
+of 35x, using methods that are reproducible in Kokkos. 
+
+During this time we have learned a lot about using
 Kokkos, which was one of the most important aspects of the project, as well as
-GPU programming in general. Additionally, we do see speed-up on the Kokkos
-versions of the kernels we have made. We are now at the point where we
+GPU programming in general. We are now at the point where we
 understand how to create faster Kokkos versions of the contraction kernels in
-Intrepid. However, we have observed different speed-ups for Cuda code versus
-Kokkos code and are unaware what is causing this difference.
+Intrepid. However, we have observed some disparity in the performances of Cuda and
+Kokkos. Hopefully we'll be able to resolve these differences going forward.
 
 
 
